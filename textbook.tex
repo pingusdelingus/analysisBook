@@ -1,8 +1,3 @@
-%  This LaTeX template is based on T.J. Hitchman's work which is itself based on Dana Ernst's template.  
-% 
-% --------------------------------------------------------------
-% Skip this stuff, and head down to where it says "Start here"
-% --------------------------------------------------------------
  
 \documentclass[12pt]{article}
  \let\biconditional\leftrightarrow
@@ -11,8 +6,11 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usetikzlibrary{arrows}
 \theoremstyle{definition}
+\newenvironment{lemma}{\vspace{1em}\noindent\textbf{Lemma}}{\vspace{1em}}
+\newenvironment{example}{\vspace{1em}\noindent\textbf{Example}}{\vspace{1em}}
 
-\newenvironment{definition}{\vspace{1em}\noindent\textbf{Definition.}}{\vspace{1em}}
+
+\newenvironment{definition}{\vspace{1em}\noindent\textbf{Definition of}}{\vspace{1em}}
 %\usepackage{graphicx}
 \newenvironment{statement}[2][Section]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
@@ -313,14 +311,145 @@ The absolute value of the difference of two reals is a distance function.\\
 \begin{statement}{Ideas!}
   For any $x,y,\epsilon \in \mathbb{R}$\\
    $ x + y > \epsilon > 0 $\\
-   Divide and Conquer's \\
+   Divide and Conquer's
 
-  1.) $(x > \frac{\epsilon}{2} \land y > \frac{\epsilon}{2}) \Rightarrow x + y > \epsilon $\\
-  2.) $(x < \frac{\epsilon}{2} \land y < \frac{\epsilon}:wq
-  {2}) \Rightarrow x + y < \epsilon$\\
-  3.) $(x < \frac{\epsilon}{b} \land y < b) \Rightarrow x * y < \frac{\epsilon}{b} * b \Rightarrow x * y < \epsilon $\\
-  4.) $(x > \frac{\epsilon}{b} \land y > b ) \Rightarrow x * y > \epsilon $
+  1.) $(x > \frac{\epsilon}{2} \land y > \frac{\epsilon}{2}) \Rightarrow x + y > \epsilon $\\ 2.) $(x < \frac{\epsilon}{2} \land y < \frac{\epsilon}:wq {2}) \Rightarrow x + y < \epsilon$\\ 3.) $(x < \frac{\epsilon}{b} \land y < b) \Rightarrow x * y < \frac{\epsilon}{b} * b \Rightarrow x * y < \epsilon $\\
+  4.) $(x > \frac{\epsilon}{b} \land y > b ) \Rightarrow x * y > \epsilon $\\
+  Transitivity of the Order Relations $ \le$ and $\ge$\\
+  5.) $(x \ge a > b) \Rightarrow x > b$\\
+  6.) $(x \le a < b) \Rightarrow x < b$
 \end{statement}
+
+\begin{definition}
+Types of $\delta$ neighborhoods of $x_0$\\
+We will primarily focus on two types of delta neighborhoods in this text. The first will be a Type I neighborhood or standard. The second will be a Type II or punctured neighborhood. We will see why momentarily.\\
+Type 1, A $:= \{x \in \mathbb{R} | x_0 - \delta < x < x_0 + \delta , \delta > 0\}$\\
+For an element to be in this neighborhood we must consider the following argument\\
+$x \in A $ if and only if $x \in (x_0 - \delta, x_0 +\delta) \iff x_0 - \delta < x < x_0 + \delta \iff -\delta < x + x_0 < +\delta $\\
+$\mid x - x_0 \mid < \delta$
+\newpage
+Type II : B$:= \{x \in \mathbb{R} | x_0 - \delta < x < x_0 + \delta , x \ne x_0 ,\delta > 0\}$\\
+The only difference between our Type I and Type II intervals is that our Type II interval excludes the point $x_0$ from the interval whereas our Type I includes $x_0$\\
+\end{definition}
+
+\begin{definition}
+Def. of an Accumulation point of a set.\\
+Given a metric space V and a distance function d, we say $x_0$ is an accumulation point of V if and only if every Type II,punctured $\delta$ neighborhood around $x_0$ intersects the set V.\\
+In $\mathbb{R}$: Left Accumulation point of $S \subseteq \mathbb{R}$\\
+we say $x_0$ is a left accumulation point of $\mathbb{R}$ if and only if\\
+$ \forall \delta > 0 (x_0 - \delta, x_0) \cap s \ne \emptyset $\\
+Right Accumulation point of $S \subseteq \mathbb{R}$\\
+$ \forall \delta > 0 (x_0, x_0 + \delta) \cap s \ne \emptyset $\\
+An Accumulation Point of $S \subseteq \mathbb{R}$\\
+$x_0$ is an accumulation point of the set S if and only if\\
+$ \forall \delta > 0 (x_0 - \delta, x_0) \cup (x_0, x_0 + \delta) \cap s \ne \emptyset $\\
+Again I would like to highlight the fact that the accumulation point is a punctured interval, that is, it does not contain the point $x_0$\\
+
+\end{definition}
+
+\begin{definition}
+Interior points.
+We will now define interior points of a set, which behave similarly to an accumulation point.\\
+$x_0$ is an interior point of the set S $\iff \exists \delta > 0$ such that $(x_0 - \delta, x_0 + \delta) \subseteq S$\\
+Again, be sure to take note that an interior point does indeed include the point $x_0$
+%----------------------------------------------------------------------------------
+%NEED TO ADD VISUAL OF INTERIOR POINT
+\end{definition}
+
+\begin{definition}
+Boundary Points.\\
+we say $x_0$ is a boundary point of a set S if and only if every set containing $x_0$ non-trivially intersects S and its complement. Note: $x_0$ does not need to intersect S\\
+We define the complement of S $\subseteq \mathbb{R}$ as follows.
+if $S = (0,1)$ then $S^\prime = (-\infty, 0] \cup [1, +\infty)$
+
+
+
+\end{definition}
+\begin{statement}{Limits}
+$x_0$ is our quintessential accumulation point of the domain of an arbitrary funcion f(x).
+$\epsilon \in \mathbb{R}^+ , \epsilon > 0.$ Epsilon represents a radial distance around some number $L \in \mathbb{R}$ on the y axis of a two dimensional graph. $\delta \in \mathbb{R}^+ $ represents a radius around $x_0$
+
+\end{statement}
+\newpage
+
+\begin{lemma}
+\textbf{The Very Useful Lemma}\\
+This result is extremely useful for the upcoming section on limits and thus has been dubbed The Very Useful Lemma.
+Let $a,b \in \mathbb{R}, if \mid a - b\mid < \epsilon$ for all $\epsilon > 0$ then a = b.\\
+At first, this result might look a little strange so lets try to unpack it. First we notice that a and b can be any numbers of our choosing but they must satisfy the condition that their distance(see theorem 1 on page 5) must be less than a positive number of our choosing $\epsilon$. If for all $\epsilon$ that we pick, we can make the distance of these two functions less than $\epsilon$ our two numbers a and b are equal.\\
+Let us now prove this rigorously.
+
+\begin{proof}
+  Assuming towards a contradiction, assume that $a \ne b$ and that $a > b$
+  without loss of generality. Then $\mid a - b \mid = a - b > 0$
+  Let's pick a clever $\epsilon$ where $\epsilon = a - b$ But by our initial assumtion of the conditional, we know that $\mid a - b \mid < \epsilon = a - b$
+  But then we observe that $a - b < a - b \Rightarrow a < a$ which is a contradiction. Thus a = b.
+
+\end{proof}
+
+\end{lemma}
+
+
+\begin{definition}
+  \textbf{1.) Real Limits at real accumulation points}
+
+  \[ \lim_{x\to x_0} f(x) = L \in \mathbb{R} \iff \forall \epsilon > 0 \exists \delta > 0, 0<\mid x - x_0 \mid < \delta \Rightarrow \mid f(x) - L \mid < \epsilon \]	
+ 
+This definition of limits has plaugued undergraduates for years and is known to be particularly tricky to fully digest due to the nested quantifiers in the statement. \\
+Our definition merely tries to asset that if we pick some radius around the limit(a limit is a real value on the y axis for our purposes) then we can find the existence of a radius $\delta$ around the x-axis such that all of the values of f(x) that come from delta are in our radius of epsilon
+% ----------------------------------------------------------------------------------
+%  add picture for limits at real acc. pts.
+\end{definition}
+
+\begin{definition}
+  Real Limits at +$\infty$
+   \[ \lim_{x\to\infty } f(x) \iff \forall \epsilon > 0 \exists \delta > 0,( x > \delta \Rightarrow \mid f(x) - L \mid < \epsilon )\]	
+
+   Notice that with our accumulation point at +$\infty$ our condition for $\delta$ is that our x is always greater than $\delta$ which is to say, for any number you pick for $\delta$ I'll choose an x larger than that so that we can consider our x at +$\infty$
+
+
+
+
+\end{definition}
+
+\begin{definition}
+ Real Limits at -$\infty$ 
+
+ \[ \lim_{x\to -\infty } f(x) = L \in \mathbb{R} \iff \forall \epsilon > 0 \exists \delta > 0,( x < -\delta \Rightarrow \mid f(x) - L \mid < \epsilon )\]	
+At this point, we can start observing the similarities between our limit definitions and what changes. Note that here, since our x is approaching -$\infty$ we make our x smaller than -$\delta$ for any delta we pick.
+
+\end{definition}
+
+
+\begin{definition}
+Infinite Limits at real accumulation points.
+  \[ \lim_{x\to x_0 } f(x) = +\infty \iff \forall \epsilon > 0 \exists \delta > 0,( x < -\delta \Rightarrow \mid f(x) - L \mid < \epsilon )\]	
+
+
+
+\end{definition}
+
+\begin{definition}
+  Infinite Limits at positive infinity
+  \[ \lim_{x\to \infty } f(x) = +\infty \iff \forall \epsilon > 0 \exists \delta > 0,( x < -\delta \Rightarrow \mid f(x) - L \mid < \epsilon )\]	
+
+
+\end{definition}
+
+\begin{definition}
+Infinite limits at negative infinity
+  \[ \lim_{x\to -\infty } f(x) = +\infty \iff \forall \epsilon > 0 \exists \delta > 0,( x < -\delta \Rightarrow \mid f(x) - L \mid < \epsilon )\]	
+
+
+
+\end{definition}
+
+\begin{example}
+1.) Proof of a Real limit at a real accumulation point.\\
+Prove that $ \lim_{x\to 0} x^2 + x^3 = 0$
+
+\end{example}
+
 
 
 
