@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1726487377.58321 "textbook.tex" "textbook.pdf" "textbook" 1726487378.34686 0
+["pdflatex"] 1729122805.80178 "textbook.tex" "textbook.pdf" "textbook" 1729122806.65221 0
   "/usr/local/texlive/2024basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2024basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -128,8 +128,8 @@
   "/usr/local/texlive/2024basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1715116405.23905 79187 3707ba1a1c2304ab6bb6cb291e5e6f79 ""
   "/usr/local/texlive/2024basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1715116382 7536462 a6021b332f73bc06913dda659900b6a9 ""
   "/usr/local/texlive/2024basic/texmf.cnf" 1710011638 628 8b896f7d9d41b43f4346b9091e52171f ""
-  "textbook.aux" 1726487378.25267 32 f852561997c05a7d986acd1deeb530ec "pdflatex"
-  "textbook.tex" 1726487376.27878 20232 cf5eb88bd41f1c8918a2b211ff2e6283 ""
+  "textbook.aux" 1729122806.55246 32 f852561997c05a7d986acd1deeb530ec "pdflatex"
+  "textbook.tex" 1729122805.59112 20920 d55623028721794797817ab1f7fec725 ""
   (generated)
   "textbook.aux"
   "textbook.log"
